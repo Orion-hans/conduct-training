@@ -2167,7 +2167,7 @@ function btPoints(m){
     pts.push([CX-(CX-LX)*t, BOT-(BOT-TOP)*(0.18+0.30*s)]);}
   for(let j=0;j<R;j++){const s2=(R===1)?1:(j/(R-1)), u=(R===1)?1:(0.38+0.62*s2); /* 안쪽 → 바깥쪽 */
     pts.push([CX+(RX-CX)*u, BOT-(BOT-TOP)*(0.20+0.42*s2)]);}
-  pts.push([CX,TOP]);
+  pts.push([CX+22,TOP+34]);
   return pts;
 }
 /* 박자표 → 지휘 박 수(3분박이면 점음표 단위로 묶음) */
@@ -2251,28 +2251,28 @@ function shapeUpdate(beatPos,n,ratio){
 /* ════════ 트레이닝 모드 ════════ */
 const TRN={stage:1,bpm:120,hand:'R',split:0,meter:4,cFrom:1,cLen:2,cue:[],stayVal:'4',playing:false,t0:0,raf:0,next:0,bi:0};
 const TRN_STAGES=[
- {n:1,t:'1/4 다운 비팅',m:1,hands:false,
-  d:'모든 비팅의 뿌리예요. <b>익투스</b>가 무엇인지 몸으로 아는 단계입니다.',
-  p:['손이 바닥(최저점)에 <b>도착하는 순간</b>이 박이에요. 내려가는 도중이 아닙니다','도착 직전에 <b>가속</b>하고, 닿는 순간 <b>감속</b>해 방향을 바꿔요','튀어 오른 높이가 다음 박의 예비가 됩니다']},
- {n:2,t:'2/4 다운·업',m:2,hands:true,
-  d:'다운과 업, 두 방향을 구분합니다. 업은 들숨이에요.',
-  p:['1박은 <b>아래</b>, 2박은 <b>위</b>로 — 두 점의 높이가 분명히 달라야 해요','업비트가 다음 마디의 예비박이 됩니다','오른손을 익힌 뒤 왼손으로, 마지막에 두 손을 거울처럼']},
- {n:3,t:'3/4 비팅',m:3,hands:true,
-  d:'2박이 오른쪽으로 나가는 첫 도형이에요.',
-  p:['1박 아래 → 2박 <b>오른쪽</b> → 3박 위','2박은 항상 오른쪽입니다. 왼쪽으로 가면 안 돼요','세 점의 높이가 서로 달라야 박이 구분돼요']},
- {n:4,t:'4/4 비팅',m:4,hands:true,
-  d:'가장 많이 쓰는 도형입니다. 좌우 균형을 잡으세요.',
-  p:['1박 아래 → 2박 <b>왼쪽</b> → 3박 <b>오른쪽</b> → 4박 위','2박과 3박의 높이를 같게 두면 안정돼요','4박은 제자리에서 위로 튀어 다음 마디를 예고합니다']},
- {n:5,t:'5/4 비팅',m:5,hands:true,split:['왼2·오1','왼1·오2'],
+ {n:1,t:'기본 비팅',m:1,hands:false,
+  d:'<b>익투스(ictus)</b>를 느끼고 몸으로 파악하는 단계.',
+  p:['손이 바닥(최저점)에 <b>도착하는 순간</b>이 포인트','힘을 빼고 가볍게 <b>농구공 튀기듯</b> 연습']},
+ {n:2,t:'2/4 연습',m:2,hands:false,
+  d:'<b>Down</b>이 마디의 시작이며 <b>Up</b>으로 끝낸다.',
+  p:['Down 박을 치고 <b>오른쪽으로 팔이 나간다</b>','Up을 하면서 <b>팔을 올린다</b>','오른손을 익힌 뒤 왼손, 그 후 미러링']},
+ {n:3,t:'3/4 연습',m:3,hands:false,
+  d:'두 번째 박에 팔이 <b>밖으로 나가는</b> 도형 연습.',
+  p:['아래 → 안쪽으로 살짝 들어온 후 <b>바깥쪽</b> → 위','몸의 <b>안쪽과 바깥쪽</b>으로 나가는 방향이 중요하다','오른손을 익힌 뒤 왼손, 그 후 미러링']},
+ {n:4,t:'4/4 연습',m:4,hands:false,
+  d:'모든 점을 지나가며 동작을 <b>유기적으로 연결</b>.',
+  p:['아래 → 바깥쪽으로 나갔다가 안쪽 → 바깥쪽 → 위','<b>∞ 도형</b>을 그린다','<b>세코와 레가토</b>를 반영해서 연습','오른손을 익힌 뒤 왼손, 그 후 미러링']},
+ {n:5,t:'5/4 비팅',m:5,hands:false,split:['왼2·오1','왼1·오2'],
   d:'가운데 세 박을 좌우로 나눕니다. 두 배분을 모두 익히세요.',
   p:['배분을 바꾸면 <b>긴 흐름의 무게</b>가 달라져요','왼쪽 두 번이면 앞이 무겁고, 오른쪽 두 번이면 뒤가 열립니다','어느 쪽이든 마지막 박은 최고점이에요']},
- {n:6,t:'6/4 비팅',m:6,hands:true,
+ {n:6,t:'6/4 비팅',m:6,hands:false,
   d:'좌우 대칭 도형이에요. 균형 감각을 만듭니다.',
   p:['1박 아래 → 왼쪽 2번 → 오른쪽 2번 → 6박 위','같은 쪽 두 점은 <b>안에서 바깥으로</b> 벌어져요','대칭이라 흔들리면 바로 보입니다']},
- {n:7,t:'7/4 비팅',m:7,hands:true,split:['왼2·오3','왼3·오2'],
+ {n:7,t:'7/4 비팅',m:7,hands:false,split:['왼2·오3','왼3·오2'],
   d:'홀수 박의 비대칭을 다룹니다.',
   p:['다섯 개의 가운데 박을 2와 3으로 나눠요','많은 쪽이 <b>넓게</b> 벌어집니다','배분을 바꿔가며 두 감각을 모두 만드세요']},
- {n:8,t:'8/4 비팅',m:8,hands:true,eight:true,
+ {n:8,t:'8/4 비팅',m:8,hands:false,eight:true,
   d:'가장 촘촘한 도형이에요. 점의 구분이 관건입니다.',
   p:['1박 아래에서 왼쪽으로 2·3·4가 <b>가까이 붙어</b> 나가요','5·6은 오른쪽으로, 7은 1과 5 사이 위쪽, 8은 맨 위','점이 겹치면 연주자가 못 읽어요. 간격을 지키세요']},
  {n:9,t:'왼손 크레셴도',m:0,left:'cresc',
@@ -2288,7 +2288,7 @@ const TRN_STAGES=[
   d:'붙들었다가 끊기. 음가만큼 유지하고 컷합니다.',
   p:['지속은 <b>가만히</b>가 아니라 <b>붙들고</b> 있는 거예요','금색 선이 꼭대기에 닿으면 <b>컷</b>입니다','컷도 예비가 있는 박이에요. 갑자기 끊으면 지저분해져요']}
 ];
-const TRN_BPMS=[60,120,180];
+const TRN_BPMS=[60,80,120,160];
 function trnStage(){return TRN_STAGES[TRN.stage-1]||TRN_STAGES[0];}
 function trnMeter(){const S=trnStage();return S.m>0?S.m:TRN.meter;}
 /* 8/4 전용 좌표 */
@@ -2299,14 +2299,14 @@ function trnPts8(){
 }
 function trnPts(n){
   if(trnStage().eight)return trnPts8();
-  if(n===1)return [[150,168],[150,74]];
+  if(n===1)return [[150,168],[150,108]];
   const sp=(function(){const S=trnStage();
     if(S.split){const mid=n-2;const L=(TRN.split===0)?(S.n===5?2:2):(S.n===5?1:3);return {L:L,R:mid-L};}
     return btSplit(n);})();
   const CX=150,TOP=74,BOT=168,LX=54,RX=246,L=sp.L,R=sp.R,pts=[[CX,BOT]];
   for(let i=0;i<L;i++)pts.push([CX-(CX-LX)*((i+1)/(L+0.4)),BOT-(BOT-TOP)*((i+1)/(L+R+2))]);
   for(let i=0;i<R;i++)pts.push([CX+(RX-CX)*((i+1)/(R+0.4)),BOT-(BOT-TOP)*((L+i+1)/(L+R+2))]);
-  pts.push([CX,TOP]);
+  pts.push([CX+24,TOP+30]);   /* 마지막 박: 1박보다 살짝 오른쪽, 높이는 조금 낮게 */
   return pts;
 }
 function trnShapeSVG(){
@@ -2327,10 +2327,7 @@ function trnLhSVG(){
 /* ── 단계별 옵션 UI ── */
 function trnOptsHTML(){
   const S=trnStage();let h='';
-  if(S.hands){
-    h+='<div class="trn-row"><span class="trn-lab">손</span><div class="trn-opts" id="trnHand">'
-      +[['R','오른손'],['L','왼손'],['B','미러링']].map(x=>'<button class="trn-o'+(TRN.hand===x[0]?' on':'')+'" data-h="'+x[0]+'">'+x[1]+'</button>').join('')+'</div></div>';
-  }
+
   if(S.split){
     h+='<div class="trn-row"><span class="trn-lab">배분</span><div class="trn-opts" id="trnSplit">'
       +S.split.map((x,i)=>'<button class="trn-o'+(TRN.split===i?' on':'')+'" data-s="'+i+'">'+x+'</button>').join('')+'</div></div>';
@@ -2394,7 +2391,7 @@ function trnBind(){
     const t=e.target;
     const st=t.closest('.trn-step');if(st){trnStop();TRN.stage=+st.getAttribute('data-n');TRN.split=0;trnRender();return;}
     if(t.id==='trnPlay'||t.closest('#trnPlay')){TRN.playing?trnStop():trnStart();return;}
-    const bp=t.closest('#trnBpm .trn-o');if(bp){TRN.bpm=+bp.getAttribute('data-b');if(TRN.playing){trnStop();trnStart();}else trnRender();return;}
+    const bp=t.closest('#trnBpm .trn-o');if(bp){const was=TRN.playing;TRN.bpm=+bp.getAttribute('data-b');if(was)trnStop();trnRender();if(was)trnStart();return;}
     const hd=t.closest('#trnHand .trn-o');if(hd){TRN.hand=hd.getAttribute('data-h');trnRender();return;}
     const sp=t.closest('#trnSplit .trn-o');if(sp){TRN.split=+sp.getAttribute('data-s');trnRender();return;}
     const mt=t.closest('#trnMeter .trn-o');if(mt){TRN.meter=+mt.getAttribute('data-m');TRN.cue=[];trnRender();return;}
@@ -2409,11 +2406,9 @@ function trnStart(){
   ensureCtx();newBus();
   TRN.playing=true;TRN.bi=0;
   const n=trnMeter(),spb=60/TRN.bpm;
-  TRN.t0=ctx.currentTime+0.12;          /* 예비 마디 시작 */
-  TRN.next=TRN.t0+(n-1)*spb;            /* 예비: 마지막 박에서만 움직임 → 클릭은 그 박부터 */
-  TRN.prep=(n>=1)?spb:spb;              /* 예비박 1박 */
-  TRN.t0=TRN.t0;                        /* 본 마디 시작 = t0 + prep */
+  TRN.t0=ctx.currentTime+0.15+spb;      /* 예비박 한 박 뒤에 본 마디 시작 */
   TRN.next=TRN.t0;
+  try{metroClick(TRN.t0-spb,'prep');}catch(e){}   /* 예비박 클릭 */
   const b=document.getElementById('trnPlay');if(b)b.textContent='■ 정지';
   trnTick();trnLoop();
 }
@@ -2458,10 +2453,7 @@ function trnDraw(bp,n,inPrep){
   const rise=(bi===0?34:(isLast?48:22));                    /* 마지막 박은 크게 튐 */
   const arc=rise*Math.sin(Math.PI*Math.pow(fr,isLast?0.62:0.85));
   const x=p0[0]+(p1[0]-p0[0])*te, y=p0[1]+(p1[1]-p0[1])*te-arc;
-  const hide=(trnStage().hands&&TRN.hand==='L');
-  dot.setAttribute('cx',x);dot.setAttribute('cy',y);
-  dot.setAttribute('opacity',hide?0.25:1);
-  dot.setAttribute('fill',TRN.hand==='B'?'#f1c47a':'#5fe0c0');
+  dot.setAttribute('cx',x);dot.setAttribute('cy',y);dot.setAttribute('opacity',1);dot.setAttribute('fill','#5fe0c0');
   svg.querySelectorAll('.trnP').forEach(function(c,i){
     const on=(i===bi&&fr<0.22);
     c.setAttribute('r',on?(i===0?15:13):(i===0?11:9));
