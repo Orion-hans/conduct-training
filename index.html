@@ -2263,21 +2263,21 @@ const TRN_STAGES=[
  {n:4,t:'4/4 연습',m:4,hands:false,
   d:'모든 점을 지나가며 동작을 <b>유기적으로 연결</b>.',
   p:['아래 → 바깥쪽으로 나갔다가 안쪽 → 바깥쪽 → 위','<b>∞ 도형</b>을 그린다','<b>세코와 레가토</b>를 반영해서 연습','오른손을 익힌 뒤 왼손, 그 후 미러링']},
- {n:5,t:'5/4 비팅',m:5,hands:false,split:['왼2·오1','왼1·오2'],
-  d:'가운데 세 박을 좌우로 나눕니다. 두 배분을 모두 익히세요.',
-  p:['배분을 바꾸면 <b>긴 흐름의 무게</b>가 달라져요','왼쪽 두 번이면 앞이 무겁고, 오른쪽 두 번이면 뒤가 열립니다','어느 쪽이든 마지막 박은 최고점이에요']},
- {n:6,t:'6/4 비팅',m:6,hands:false,
-  d:'좌우 대칭 도형이에요. 균형 감각을 만듭니다.',
-  p:['1박 아래 → 왼쪽 2번 → 오른쪽 2번 → 6박 위','같은 쪽 두 점은 <b>안에서 바깥으로</b> 벌어져요','대칭이라 흔들리면 바로 보입니다']},
- {n:7,t:'7/4 비팅',m:7,hands:false,split:['왼2·오3','왼3·오2'],
-  d:'홀수 박의 비대칭을 다룹니다.',
-  p:['다섯 개의 가운데 박을 2와 3으로 나눠요','많은 쪽이 <b>넓게</b> 벌어집니다','배분을 바꿔가며 두 감각을 모두 만드세요']},
- {n:8,t:'8/4 비팅',m:8,hands:false,eight:true,
-  d:'가장 촘촘한 도형이에요. 점의 구분이 관건입니다.',
-  p:['1박 아래에서 왼쪽으로 2·3·4가 <b>가까이 붙어</b> 나가요','5·6은 오른쪽으로, 7은 1과 5 사이 위쪽, 8은 맨 위','점이 겹치면 연주자가 못 읽어요. 간격을 지키세요']},
- {n:9,t:'왼손 크레셴도',m:0,left:'cresc',
-  d:'왼손의 첫 일 — 정한 길이에 걸쳐 키웁니다.',
-  p:['<b>시작 마디</b>와 <b>몇 마디에 걸쳐</b>를 미리 정해요','일찍 다 쓰면 남은 구간이 평평해집니다','흰 원이 <b>도달할 크기</b>예요. 닿으면 깜빡입니다','오른손은 박을 유지 — 같이 커지면 안 돼요']},
+ {n:5,t:'5/4 연습',m:5,hands:false,split:['왼2·오1','왼1·오2'],
+  d:'가운데 세 박을 <b>좌·우로 나누어 배분</b>하는 연습.',
+  p:['<b>리듬형을 파악</b>하여 박을 배분한다','배분에 따라 <b>무게 중심</b>이 달라지며 한 마디에 다운, 업은 한 번','오른손을 익힌 뒤 왼손, 그 후 미러링']},
+ {n:6,t:'6/4 연습',m:6,hands:false,
+  d:'좌·우를 <b>두 번씩 나누는</b> 연습.',
+  p:['아래 → 안쪽 2번 → 바깥쪽 2번 → 위','같은 방향의 두 점은 <b>조금만 띄운다</b>','오른손을 익힌 뒤 왼손, 그 후 미러링']},
+ {n:7,t:'7/4 연습',m:7,hands:false,split:['왼2·오3','왼3·오2'],
+  d:'홀수 박의 <b>좌·우 배분</b>을 연습.',
+  p:['다섯 개의 가운데 박을 <b>2와 3</b>으로 나눈다','배분을 바꿔가며 두 감각을 <b>몸에 익힌다</b>','오른손을 익힌 뒤 왼손, 그 후 미러링']},
+ {n:8,t:'8/4 연습',m:8,hands:false,eight:true,
+  d:'<b>모든 방향</b>에 배분하는 도형 연습.',
+  p:['첫 박은 <b>다운</b> 그리고 안쪽과 바깥쪽 마지막 박은 <b>업</b>','오른손을 익힌 뒤 왼손, 그 후 미러링']},
+ {n:9,t:'크레셴도',m:0,left:'cresc',
+  d:'정한 길이와 속도에 맞게 <b>왼손과 팔을 조절</b>하는 연습.',
+  p:['박이나 마디의 길이, 템포에 따라 <b>왼손과 팔의 속도</b>를 조절','오른손은 박을 유지하며 <b>흔들리지 않게</b> 한다','왼손과 오른손을 <b>분할</b>하여 연습']},
  {n:10,t:'왼손 디크레셴도',m:0,left:'dim',
   d:'줄이는 것도 능동적인 동작이에요.',
   p:['소극적으로 보이지 않으려면 손을 <b>적극적으로 내려야</b> 해요','어디까지 줄일지 끝을 먼저 정하세요','오른손 도형은 크기를 유지합니다']},
@@ -2294,8 +2294,8 @@ function trnMeter(){const S=trnStage();return S.m>0?S.m:TRN.meter;}
 /* 8/4 전용 좌표 */
 function trnPts8(){
   const CX=150,TOP=64,BOT=168,dy=(BOT-TOP)/5;
-  return [[CX,BOT],[CX-38,BOT-dy*0.5],[CX-76,BOT-dy*1.0],[CX-112,BOT-dy*1.5],
-          [CX+40,BOT-dy*0.8],[CX+84,BOT-dy*1.4],[CX+22,BOT-dy*2.6],[CX,TOP]];
+  return [[CX,BOT],[CX-24,BOT-dy*0.34],[CX-76,BOT-dy*1.0],[CX-112,BOT-dy*1.5],
+          [CX+40,BOT-dy*0.45],[CX+84,BOT-dy*0.85],[CX+58,BOT-dy*1.85],[CX+24,BOT-dy*2.7]];
 }
 function trnPts(n){
   if(trnStage().eight)return trnPts8();
@@ -2304,9 +2304,10 @@ function trnPts(n){
     if(S.split){const mid=n-2;const L=(TRN.split===0)?(S.n===5?2:2):(S.n===5?1:3);return {L:L,R:mid-L};}
     return btSplit(n);})();
   const CX=150,TOP=74,BOT=168,LX=54,RX=246,L=sp.L,R=sp.R,pts=[[CX,BOT]];
-  for(let i=0;i<L;i++)pts.push([CX-(CX-LX)*((i+1)/(L+0.4)),BOT-(BOT-TOP)*((i+1)/(L+R+2))]);
-  for(let i=0;i<R;i++)pts.push([CX+(RX-CX)*((i+1)/(R+0.4)),BOT-(BOT-TOP)*((L+i+1)/(L+R+2))]);
-  pts.push([CX+24,TOP+30]);   /* 마지막 박: 1박보다 살짝 오른쪽, 높이는 조금 낮게 */
+  const H=BOT-TOP, LF=0.86, RF=0.62;                          /* 좌우를 각각 정규화 · 오른쪽을 더 낮게 */
+  for(let i=0;i<L;i++)pts.push([CX-(CX-LX)*((i+1)/(L+0.4)),BOT-H*((i+1)/(L+2))*LF]);
+  for(let i=0;i<R;i++)pts.push([CX+(RX-CX)*((i+1)/(R+0.4)),BOT-H*((i+1)/(R+2))*RF]);
+  pts.push([CX+24,TOP+40]);   /* 마지막 박: 1박보다 살짝 오른쪽, 높이는 더 낮게 */
   return pts;
 }
 function trnShapeSVG(){
@@ -2337,9 +2338,7 @@ function trnOptsHTML(){
       +[2,3,4,5,6,7,8].map(m=>'<button class="trn-o'+(TRN.meter===m?' on':'')+'" data-m="'+m+'">'+m+'/4</button>').join('')+'</div></div>';
   }
   if(S.left==='cresc'||S.left==='dim'){
-    h+='<div class="trn-row"><span class="trn-lab">시작 마디</span><div class="trn-opts" id="trnFrom">'
-      +[1,2,3,4].map(x=>'<button class="trn-o'+(TRN.cFrom===x?' on':'')+'" data-f="'+x+'">'+x+'</button>').join('')+'</div></div>'
-     +'<div class="trn-row"><span class="trn-lab">지속</span><div class="trn-opts" id="trnLen">'
+    h+='<div class="trn-row"><span class="trn-lab">지속</span><div class="trn-opts" id="trnLen">'
       +[1,2,3,4].map(x=>'<button class="trn-o'+(TRN.cLen===x?' on':'')+'" data-l="'+x+'">'+x+'마디</button>').join('')+'</div></div>';
   }
   if(S.left==='cue'){
@@ -2406,9 +2405,10 @@ function trnStart(){
   ensureCtx();newBus();
   TRN.playing=true;TRN.bi=0;
   const n=trnMeter(),spb=60/TRN.bpm;
-  TRN.t0=ctx.currentTime+0.15+spb;      /* 예비박 한 박 뒤에 본 마디 시작 */
+  TRN.prepN=4;                          /* 예비박 4개 */
+  TRN.t0=ctx.currentTime+0.15+spb*TRN.prepN;
   TRN.next=TRN.t0;
-  try{metroClick(TRN.t0-spb,'prep');}catch(e){}   /* 예비박 클릭 */
+  for(let k=TRN.prepN;k>=1;k--){try{metroClick(TRN.t0-spb*k,k===1?'prep':'sub');}catch(e){}}
   const b=document.getElementById('trnPlay');if(b)b.textContent='■ 정지';
   trnTick();trnLoop();
 }
@@ -2432,18 +2432,20 @@ function trnLoop(){
   const step=()=>{
     if(!TRN.playing)return;
     trnTick();
-    const n=trnMeter(),spb=60/TRN.bpm,prep=spb;
+    const n=trnMeter(),spb=60/TRN.bpm,pn=TRN.prepN||4;
     const now=(ctx?ctx.currentTime+0.018:0),el=now-TRN.t0;
-    let bp,measIdx=0,inPrep=false;
-    if(el<0){inPrep=true;bp=n-1+Math.max(0,Math.min(0.999,(el+prep)/prep));}
+    let bp,measIdx=0,inPrep=false,prepK=0;
+    if(el<0){inPrep=true;prepK=Math.min(pn,Math.floor((el+spb*pn)/spb)+1);
+      const last=(el> -spb);                       /* 마지막 예비박에서만 움직임 */
+      bp=last?(n-1+Math.max(0,Math.min(0.999,(el+spb)/spb))):(n-1);}
     else{const bar=n*spb;measIdx=Math.floor(el/bar);const t=el%bar;bp=t/spb;}
-    trnDraw(bp,n,inPrep);
+    trnDraw(bp,n,inPrep,prepK);
     if(trnStage().left)trnLeft(measIdx,bp,n,el,spb);
     TRN.raf=requestAnimationFrame(step);
   };
   TRN.raf=requestAnimationFrame(step);
 }
-function trnDraw(bp,n,inPrep){
+function trnDraw(bp,n,inPrep,prepK){
   const svg=document.getElementById('trnSvg');if(!svg)return;
   const dot=document.getElementById('trnDot');if(!dot)return;
   const pts=trnPts(n),bi=Math.max(0,Math.min(n-1,Math.floor(bp))),fr=bp-Math.floor(bp);
@@ -2459,7 +2461,7 @@ function trnDraw(bp,n,inPrep){
     c.setAttribute('r',on?(i===0?15:13):(i===0?11:9));
     c.setAttribute('fill',on?'#ffffff':(i===0?'#8a7a5c':'#2f6f60'));});
   const bn=document.getElementById('trnBeatN');
-  if(bn)bn.innerHTML='<b>'+(inPrep?'예비':(bi+1))+'</b> / '+n;
+  if(bn)bn.innerHTML='<b>'+(inPrep?('예비 '+(prepK||1)):(bi+1))+'</b> / '+n;
 }
 /* 왼손 과제 */
 function trnLeft(measIdx,bp,n,el,spb){
